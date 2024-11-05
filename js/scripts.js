@@ -17,27 +17,38 @@ const modalLink = document.getElementById('modal-link');
 const closeButton = document.querySelector('.close-button');
 
 if (modal && modalImage && modalDescription && modalLink && closeButton) {
-    // Sample project data
+    // Project data
     const projects = {
         1: {
             title: 'Project Title 1',
-            image: 'images/project1.jpg',
+            image: 'images/project1-placeholder.jpg',
             description: 'Detailed description of Project 1.',
             link: 'https://liveproject1.com'
         },
         2: {
             title: 'Project Title 2',
-            image: 'images/project2.jpg',
+            image: 'images/project2-placeholder.jpg',
             description: 'Detailed description of Project 2.',
             link: 'https://liveproject2.com'
         },
         3: {
             title: 'Project Title 3',
-            image: 'images/project3.jpg',
+            image: 'images/project3-placeholder.jpg',
             description: 'Detailed description of Project 3.',
             link: 'https://liveproject3.com'
+        },
+        4: {
+            title: 'Project Title 4',
+            image: 'images/project4-placeholder.jpg',
+            description: 'Detailed description of Project 4.',
+            link: 'https://liveproject4.com'
+        },
+        5: {
+            title: 'Project Title 5',
+            image: 'images/project5-placeholder.jpg',
+            description: 'Detailed description of Project 5.',
+            link: 'https://liveproject5.com'
         }
-        // Add more projects as needed
     };
 
     // Open Modal
