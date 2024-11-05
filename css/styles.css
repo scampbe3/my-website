@@ -107,7 +107,7 @@ nav {
 
 .cta-button {
     padding: 0.75rem 1.5rem;
-    background-color: #ff6600;
+    background-color: #ff6600; /* Orange color */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -116,7 +116,7 @@ nav {
 }
 
 .cta-button:hover {
-    background-color: #e65c00;
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
@@ -157,7 +157,7 @@ nav {
     flex: 1 1 300px;
     display: flex;
     flex-direction: column;
-    /* Remove justify-content: space-between; */
+    /* Removed justify-content: space-between; */
     /* Instead, use padding and 'margin-top: auto' on button */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -171,8 +171,9 @@ nav {
 /* Button Styling */
 .service-item .cta-button {
     margin-top: auto; /* Pushes button to the bottom */
+    align-self: center; /* Centers the button horizontally */
     padding: 0.75rem 1.5rem;
-    background-color: #004466;
+    background-color: #ff6600; /* Orange color */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -181,7 +182,7 @@ nav {
 }
 
 .service-item .cta-button:hover {
-    background-color: #00334d;
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
@@ -240,7 +241,7 @@ nav {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #004466;
+    background-color: #ff6600; /* Orange color */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -248,7 +249,7 @@ nav {
 }
 
 .view-button:hover {
-    background-color: #00334d;
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
@@ -379,7 +380,7 @@ footer {
 }
 
 #modal-link {
-    background-color: #004466;
+    background-color: #ff6600; /* Orange color */
     color: #fff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
@@ -388,7 +389,7 @@ footer {
 }
 
 #modal-link:hover {
-    background-color: #00334d;
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
@@ -424,7 +425,7 @@ footer {
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #004466;
+    border-color: #ff6600; /* Match button color */
     outline: none;
 }
 
