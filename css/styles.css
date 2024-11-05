@@ -1,289 +1,289 @@
 /* =========================================
-Reset and Base Styles
-========================================= */
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+   Reset and Base Styles
+   ========================================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
- font-family: 'Roboto', sans-serif;
- line-height: 1.6;
- color: #333;
- background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 /* =========================================
-Navigation
-========================================= */
+   Navigation
+   ========================================= */
 header {
- background-color: #004466;
- position: fixed;
- width: 100%;
- top: 0;
- z-index: 1000;
+    background-color: #004466;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
- display: flex;
- justify-content: space-between;
- align-items: center;
- max-width: 1200px;
- margin: auto;
- padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
 }
 
 .logo a {
- color: #fff;
- font-size: 1.5rem;
- font-weight: bold;
- text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .nav-links {
- list-style: none;
- display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .nav-links li {
- margin-left: 2rem;
+    margin-left: 2rem;
 }
 
 .nav-links a {
- color: #fff;
- text-decoration: none;
- font-weight: 500;
- transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
- color: #ff6600;
+    color: #ff6600;
 }
 
 /* Hamburger Menu (Mobile) */
 .hamburger {
- display: none;
- flex-direction: column;
- cursor: pointer;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .bar {
- height: 3px;
- width: 25px;
- background-color: #fff;
- margin: 4px 0;
- transition: all 0.3s ease;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
 }
 
 /* =========================================
-Hero Section
-========================================= */
+   Hero Section
+   ========================================= */
 .hero {
- background: url('../images/hero-bg.jpg') no-repeat center center/cover;
- height: 100vh;
- display: flex;
- align-items: center;
- justify-content: center;
- padding-top: 80px; /* To offset the fixed header */
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* To offset the fixed header */
 }
 
 .hero-content {
- text-align: center;
- color: #fff;
- max-width: 800px;
- padding: 0 1rem;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 0 1rem;
 }
 
 .hero h1 {
- font-size: 3rem;
- margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
- font-size: 1.2rem;
- margin-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .cta-button {
- padding: 0.75rem 1.5rem;
- background-color: #ff6600; /* Orange color */
- color: #fff;
- text-decoration: none;
- border-radius: 5px;
- font-weight: bold;
- transition: background-color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
- background-color: #e65c00; /* Darker orange */
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
-Services Section
-========================================= */
+   Services Section
+   ========================================= */
 .services-content {
- max-width: 1200px;
- margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
- padding: 0 1rem;
- text-align: center;
+    max-width: 1200px;
+    margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
+    padding: 0 1rem;
+    text-align: center;
 }
 
 .services-content h1 {
- font-size: 2.5rem;
- margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .services-content p {
- font-size: 1rem;
- color: #555;
- margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
 }
 
 /* Parent Container */
 .service-list {
- display: flex;
- flex-wrap: wrap;
- gap: 2rem;
- justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
 
 /* Each Service Box */
 .service-item {
- background-color: #f4f4f4;
- border: 1px solid #ddd;
- border-radius: 5px;
- padding: 2rem;
- flex: 1 1 300px;
- display: flex;
- flex-direction: column;
- /* Removed justify-content: space-between; */
- /* Instead, use padding and 'margin-top: auto' on button */
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
- transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2rem;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    /* Removed justify-content: space-between; */
+    /* Instead, use padding and 'margin-top: auto' on button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover {
- transform: translateY(-5px);
- box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Button Styling */
 .service-item .cta-button {
- margin-top: auto; /* Pushes button to the bottom */
- align-self: center; /* Centers the button horizontally */
- padding: 0.75rem 1.5rem;
- background-color: #ff6600; /* Orange color */
- color: #fff;
- text-decoration: none;
- border-radius: 5px;
- font-weight: bold;
- transition: background-color 0.3s ease;
+    margin-top: auto; /* Pushes button to the bottom */
+    align-self: center; /* Centers the button horizontally */
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .service-item .cta-button:hover {
- background-color: #e65c00; /* Darker orange */
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
-Portfolio Preview
-========================================= */
+   Portfolio Preview
+   ========================================= */
 .portfolio-preview {
- padding: 4rem 1rem;
- text-align: center;
- background-color: #fff;
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: #fff;
 }
 
 .portfolio-preview h2 {
- font-size: 2rem;
- margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .projects {
- display: flex;
- justify-content: center; /* Center the projects horizontally */
- flex-wrap: wrap;
- gap: 2rem;
- margin-bottom: 2rem;
+    display: flex;
+    justify-content: center; /* Center the projects horizontally */
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .project {
- background-color: #f4f4f4;
- border: 1px solid #ddd;
- border-radius: 5px;
- width: 300px;
- padding: 1rem;
- transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
- transform: translateY(-10px);
- box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .project img {
- width: 100%;
- height: 200px;
- object-fit: cover;
- border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 .project h3 {
- margin: 1rem 0 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
 }
 
 .project p {
- font-size: 0.9rem;
- color: #555;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 .view-button {
- display: inline-block;
- margin-top: 1rem;
- padding: 0.5rem 1rem;
- background-color: #ff6600; /* Orange color */
- color: #fff;
- text-decoration: none;
- border-radius: 5px;
- transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .view-button:hover {
- background-color: #e65c00; /* Darker orange */
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
-Footer
-========================================= */
+   Footer
+   ========================================= */
 footer {
- background-color: #222;
- color: #fff;
- padding: 2rem 1rem;
- text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
 .footer-content {
- max-width: 1200px;
- margin: auto;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .social-links a {
- color: #fff;
- margin: 0 0.5rem;
- font-size: 1.2rem;
- transition: color 0.3s ease;
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
- color: #ff6600;
+    color: #ff6600;
 }
 
 /* =========================================
    About Page Specific Styles
    ========================================= */
-   .about-content {
+.about-content {
     max-width: 1200px;
-    margin: 6rem auto 4rem auto; /* Offset for fixed header */
+    margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
     padding: 0 1rem;
     text-align: center;
 }
@@ -292,7 +292,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to flex-start */
     margin-top: 2rem;
 }
 
@@ -308,6 +308,7 @@ footer {
 .bio {
     flex: 1;
     text-align: left;
+    position: relative; /* Added to manage positioning */
 }
 
 .bio h2 {
@@ -339,7 +340,7 @@ footer {
 
 .bio .cta-button {
     margin-top: 2rem;
-    align-self: flex-start;
+    align-self: center; /* Changed from flex-start to center */
 }
 
 @media (max-width: 768px) {
@@ -355,221 +356,138 @@ footer {
     .bio .cta-button {
         align-self: center;
     }
-}
 
+    /* Portfolio Grid Adjustments */
+    .portfolio-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 /* =========================================
-Portfolio Page Specific Styles
-========================================= */
-.portfolio-content {
- max-width: 1200px;
- margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
- padding: 0 1rem;
- text-align: center;
-}
-
-.portfolio-grid {
- display: flex;
- flex-wrap: wrap;
- justify-content: center; /* Center the projects horizontally */
- gap: 2rem;
- margin-top: 2rem;
-}
-
-/* Modal Styles */
+   Modal Styles
+   ========================================= */
 .modal {
- display: none; /* Hidden by default */
- position: fixed;
- z-index: 2000;
- left: 0;
- top: 0;
- width: 100%;
- height: 100%;
- overflow: auto;
- background-color: rgba(0,0,0,0.7);
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
 }
 
 .modal-content {
- background-color: #fefefe;
- margin: 10% auto;
- padding: 2rem;
- border: 1px solid #888;
- width: 80%;
- max-width: 700px;
- position: relative;
- border-radius: 10px;
- text-align: center;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .close-button {
- color: #aaa;
- position: absolute;
- top: 10px;
- right: 25px;
- font-size: 2rem;
- font-weight: bold;
- cursor: pointer;
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .close-button:hover,
 .close-button:focus {
- color: #000;
- text-decoration: none;
+    color: #000;
+    text-decoration: none;
 }
 
 .modal-content img {
- width: 100%;
- height: auto;
- margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 .modal-content p {
- color: #555;
- margin-bottom: 1.5rem;
+    color: #555;
+    margin-bottom: 1.5rem;
 }
 
 #modal-link {
- background-color: #ff6600; /* Orange color */
- color: #fff;
- padding: 0.75rem 1.5rem;
- text-decoration: none;
- border-radius: 5px;
- transition: background-color 0.3s ease;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #modal-link:hover {
- background-color: #e65c00; /* Darker orange */
+    background-color: #e65c00; /* Darker orange */
 }
 
 /* =========================================
-Contact Page Specific Styles
-========================================= */
+   Contact Page Specific Styles
+   ========================================= */
 .contact-form {
- max-width: 600px;
- margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
- display: flex;
- flex-direction: column;
- gap: 1.5rem;
+    max-width: 600px;
+    margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .form-group {
- display: flex;
- flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
- margin-bottom: 0.5rem;
- font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
- padding: 0.75rem;
- border: 1px solid #ccc;
- border-radius: 5px;
- font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
- border-color: #ff6600; /* Match button color */
- outline: none;
+    border-color: #ff6600; /* Match button color */
+    outline: none;
 }
 
 /* =========================================
-Booking Section (Calendly Embed)
-========================================= */
+   Booking Section (Calendly Embed)
+   ========================================= */
 .booking-content {
- max-width: 1200px;
- margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
- padding: 0 1rem;
- text-align: center;
+    max-width: 1200px;
+    margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
+    padding: 0 1rem;
+    text-align: center;
 }
 
 /* =========================================
-Fade-in Animation
-========================================= */
+   Fade-in Animation
+   ========================================= */
 .fade-in {
- opacity: 0;
- transform: translateY(20px);
- transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.show {
- opacity: 1;
- transform: translateY(0);
-}
-
-/* =========================================
-Responsive Styles
-========================================= */
-@media (max-width: 768px) {
- .nav-links {
-     position: fixed;
-     right: 0;
-     height: 100vh;
-     top: 0;
-     background-color: #004466;
-     flex-direction: column;
-     align-items: center;
-     width: 50%;
-     transform: translateX(100%);
-     transition: transform 0.5s ease-in;
- }
-
- .nav-links li {
-     margin: 2rem 0;
- }
-
- .hamburger {
-     display: flex;
- }
-
- .nav-active {
-     transform: translateX(0);
- }
-
- /* Hero Section */
- .hero h1 {
-     font-size: 2.5rem;
- }
-
- /* Profile Section */
- .profile {
-     flex-direction: column;
-     align-items: center;
- }
-
- .profile img {
-     width: 200px;
-     height: 200px;
- }
-
- /* Service List */
- .service-list,
- .portfolio-grid,
- .testimonial-list {
-     flex-direction: column;
-     align-items: center;
- }
-
- /* Projects */
- .projects {
-     flex-direction: column;
-     align-items: center;
- }
-
- /* Services Page Adjustments */
- .service-item {
-     width: 100%;
-     max-width: 500px;
- }
-
- /* Portfolio Grid Adjustments */
- .portfolio-grid {
-     flex-direction: column;
-     align-items: center;
- }
+    opacity: 1;
+    transform: translateY(0);
 }
