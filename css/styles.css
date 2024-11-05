@@ -279,36 +279,84 @@ footer {
 }
 
 /* =========================================
-About Page Specific Styles
-========================================= */
-.about-content {
- max-width: 1200px;
- margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
- padding: 0 1rem;
+   About Page Specific Styles
+   ========================================= */
+   .about-content {
+    max-width: 1200px;
+    margin: 6rem auto 4rem auto; /* Offset for fixed header */
+    padding: 0 1rem;
+    text-align: center;
 }
 
 .profile {
- display: flex;
- flex-wrap: wrap;
- gap: 2rem;
- margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .profile img {
- width: 300px;
- height: 300px;
- object-fit: cover;
- border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .bio {
- flex: 1;
+    flex: 1;
+    text-align: left;
+}
+
+.bio h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bio h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bio p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
 .bio ul {
- list-style: disc;
- margin-left: 1.5rem;
+    list-style: disc;
+    margin-left: 1.5rem;
+    color: #555;
 }
+
+.bio ul li {
+    margin-bottom: 0.5rem;
+}
+
+.bio .cta-button {
+    margin-top: 2rem;
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bio {
+        text-align: center;
+    }
+
+    .bio .cta-button {
+        align-self: center;
+    }
+}
+
 
 /* =========================================
 Portfolio Page Specific Styles
