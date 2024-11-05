@@ -1,5 +1,7 @@
-/* Reset and Base Styles */
-* {
+/* =========================================
+   Reset and Base Styles
+   ========================================= */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +14,9 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Navigation */
+/* =========================================
+   Navigation
+   ========================================= */
 header {
     background-color: #004466;
     position: fixed;
@@ -72,7 +76,9 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* =========================================
+   Hero Section
+   ========================================= */
 .hero {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -113,7 +119,73 @@ nav {
     background-color: #e65c00;
 }
 
-/* Portfolio Preview */
+/* =========================================
+   Services Section
+   ========================================= */
+.services-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.services-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Parent Container */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Each Service Box */
+.service-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 2rem;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+.service-item .cta-button {
+    align-self: flex-start;
+    padding: 0.75rem 1.5rem;
+    background-color: #004466;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.service-item .cta-button:hover {
+    background-color: #00334d;
+}
+
+/* =========================================
+   Portfolio Preview
+   ========================================= */
 .portfolio-preview {
     padding: 4rem 1rem;
     text-align: center;
@@ -163,7 +235,24 @@ nav {
     color: #555;
 }
 
-/* Footer */
+.view-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #004466;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #00334d;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
 footer {
     background-color: #222;
     color: #fff;
@@ -187,7 +276,9 @@ footer {
     color: #ff6600;
 }
 
-/* About Page */
+/* =========================================
+   About Page Specific Styles
+   ========================================= */
 .about-content {
     max-width: 1200px;
     margin: 4rem auto;
@@ -217,46 +308,9 @@ footer {
     margin-left: 1.5rem;
 }
 
-/* Services Page */
-.services-content {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1rem;
-    text-align: center;
-}
-
-.service-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.service-item {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 2rem;
-    flex: 1;
-    min-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.service-item h2 {
-    margin-bottom: 1rem;
-}
-
-.service-item p {
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-/* Portfolio Page */
+/* =========================================
+   Portfolio Page Specific Styles
+   ========================================= */
 .portfolio-content {
     max-width: 1200px;
     margin: 4rem auto;
@@ -269,114 +323,6 @@ footer {
     flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
-}
-
-.portfolio-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    flex: 1;
-    min-width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.view-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #004466;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.view-button:hover {
-    background-color: #00334d;
-}
-
-/* Contact Page */
-.contact-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: #004466;
-    outline: none;
-}
-
-/* Testimonials Page */
-.testimonials-content {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1rem;
-    text-align: center;
-}
-
-.testimonial-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.testimonial-item {
-    background-color: #f4f4f4;
-    border-left: 5px solid #ff6600;
-    padding: 1.5rem;
-    flex: 1;
-    min-width: 250px;
-    position: relative;
-}
-
-.testimonial-item p {
-    font-style: italic;
-    color: #555;
-}
-
-.testimonial-item h3 {
-    margin-top: 1rem;
-    text-align: right;
-    font-weight: bold;
 }
 
 /* Modal Styles */
@@ -444,7 +390,56 @@ footer {
     background-color: #00334d;
 }
 
-/* Fade-in Animation */
+/* =========================================
+   Contact Page Specific Styles
+   ========================================= */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #004466;
+    outline: none;
+}
+
+/* =========================================
+   Booking Section (Calendly Embed)
+   ========================================= */
+.booking-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+/* =========================================
+   Fade-in Animation
+   ========================================= */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -456,7 +451,9 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive Styles */
+/* =========================================
+   Responsive Styles
+   ========================================= */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -511,5 +508,11 @@ footer {
     .projects {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* Services Page Adjustments */
+    .service-item {
+        width: 100%;
+        max-width: 500px;
     }
 }
