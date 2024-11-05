@@ -7,7 +7,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body spans the full viewport height */
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
@@ -19,10 +26,8 @@ body {
    ========================================= */
 header {
     background-color: #004466;
-    position: fixed;
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    /* Removed position: fixed; to allow Flexbox to handle layout */
 }
 
 nav {
@@ -85,7 +90,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; /* To offset the fixed header */
+    /* Removed padding-top to prevent overlap with fixed header */
 }
 
 .hero-content {
@@ -124,7 +129,7 @@ nav {
    ========================================= */
 .services-content {
     max-width: 1200px;
-    margin: 6rem auto 4rem auto; /* Added top margin to offset fixed header */
+    margin: 4rem auto 4rem auto; /* Adjusted top margin */
     padding: 0 1rem;
     text-align: center;
 }
@@ -263,6 +268,7 @@ footer {
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .footer-content {
