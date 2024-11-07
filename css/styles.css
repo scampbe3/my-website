@@ -24,10 +24,9 @@ body {
 /* =========================================
    Navigation
    ========================================= */
-header {
+   header {
     background-color: #004466;
     width: 100%;
-    /* Removed position: fixed; to allow Flexbox to handle layout */
 }
 
 nav {
@@ -71,6 +70,7 @@ nav {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001; /* Ensures hamburger is above the pop-out menu */
 }
 
 .bar {
@@ -79,6 +79,46 @@ nav {
     background-color: #fff;
     margin: 4px 0;
     transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #004466;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1000; /* Ensures menu is above other content */
+    }
+
+    .nav-active {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* ... other responsive styles ... */
+}
+
+
+/* =========================================
+   Main Content Area
+   ========================================= */
+main {
+    flex: 1; /* Allows main to grow and take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
 }
 
 /* =========================================
@@ -90,7 +130,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Removed padding-top to prevent overlap with fixed header */
 }
 
 .hero-content {
@@ -189,16 +228,23 @@ nav {
 }
 
 /* =========================================
-   Portfolio Preview
+   Portfolio Section
    ========================================= */
-.portfolio-preview {
-    padding: 4rem 1rem;
+.portfolio-content {
+    max-width: 1200px;
+    margin: 4rem auto 4rem auto;
+    padding: 0 1rem;
     text-align: center;
-    background-color: #fff;
 }
 
-.portfolio-preview h2 {
-    font-size: 2rem;
+.portfolio-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-content p {
+    font-size: 1rem;
+    color: #555;
     margin-bottom: 2rem;
 }
 
@@ -258,33 +304,6 @@ nav {
 
 .view-button:hover {
     background-color: #e65c00; /* Darker orange */
-}
-
-/* =========================================
-   Footer
-   ========================================= */
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 2rem 1rem;
-    text-align: center;
-    margin-top: auto; /* Pushes footer to the bottom */
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.social-links a {
-    color: #fff;
-    margin: 0 0.5rem;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #ff6600;
 }
 
 /* =========================================
@@ -355,6 +374,124 @@ footer {
 }
 
 /* =========================================
+   Contact Page Specific Styles
+   ========================================= */
+.contact-content {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #004466;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ff6600; /* Match button color */
+    outline: none;
+}
+
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e65c00; /* Darker orange */
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6600;
+}
+
+/* =========================================
+   Fade-In and Drift-Up Animations
+   ========================================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    /* Optional: stagger animations with delay */
+    /* You can add delay using inline styles or additional classes if needed */
+}
+
+/* =========================================
    Responsive Styles
    ========================================= */
 @media (max-width: 768px) {
@@ -383,12 +520,29 @@ footer {
         transform: translateX(0);
     }
 
-    /* Hero Section */
+    /* Adjustments for smaller screens */
+    main {
+        padding: 1rem;
+    }
+
+    .contact-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-content h1 {
+        font-size: 2rem;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    /* Hero Section Adjustments */
     .hero h1 {
         font-size: 2.5rem;
     }
 
-    /* Profile Section */
+    /* Profile Section Adjustments */
     .profile {
         flex-direction: column;
         align-items: center;
@@ -399,24 +553,12 @@ footer {
         height: 200px;
     }
 
-    /* Service List */
+    /* Service List Adjustments */
     .service-list,
     .portfolio-grid,
     .testimonial-list {
         flex-direction: column;
         align-items: center;
-    }
-
-    /* Projects */
-    .projects {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Services Page Adjustments */
-    .service-item {
-        width: 100%;
-        max-width: 500px;
     }
 
     /* Portfolio Grid Adjustments */
