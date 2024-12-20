@@ -35,15 +35,27 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    padding: 1rem;
+    padding: 0rem;
 }
 
+/* Reset styles for .logo a since it now contains an image */
 .logo a {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
+    display: block; /* Ensures the link wraps around the image properly */
+    padding: 0; /* Remove any default padding */
+    margin: 0; /* Remove any default margin */
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit color to avoid conflicts */
 }
+
+
+/* Logo Image Styling */
+.logo img {
+    height: 6.5rem; /* Adjust this value to fit your navigation bar height */
+    width: auto;
+    /* Optional: Add responsive behavior */
+    max-height: 80px;
+}
+
 
 .nav-links {
     list-style: none;
@@ -80,8 +92,6 @@ nav {
     margin: 4px 0;
     transition: all 0.3s ease;
 }
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -91,10 +101,11 @@ nav {
         background-color: #004466;
         flex-direction: column;
         align-items: center;
-        width: 20%;
+        width: 20% !important; /* Adjusted width */
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
-        z-index: 1000; /* Ensures menu is above other content */
+        z-index: 1000; /* Above other content */
+        padding-top: 60px; /* Pushes menu items lower */
     }
 
     .nav-active {
@@ -103,10 +114,17 @@ nav {
 
     .hamburger {
         display: flex;
+        z-index: 1001; /* Above the pop-out menu */
     }
 
-    /* ... other responsive styles ... */
+    /* Optional: Adjust overlay if implemented */
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999; /* Below .nav-links */
+    }
 }
+
 
 
 /* =========================================
@@ -373,14 +391,17 @@ main {
     display: inline-block; /* Ensure the button doesn't stretch */
 }
 
-/* =========================================
-   Contact Page Specific Styles
-   ========================================= */
+/* Contact Page Specific Styles */
+/* Calendly Booking Section Styling */
+.calendly-section {
+    margin-top: 2rem; /* Adds 2rem of space above the Calendly section */
+}
+
 .contact-content {
     max-width: 600px;
     width: 100%;
     background-color: #fff;
-    padding: 3rem 2rem;
+    padding: 1rem; /* Adjusted padding */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
@@ -388,15 +409,16 @@ main {
 
 .contact-content h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Adjusted margin */
     color: #004466;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem; /* Adjusted gap */
 }
+
 
 .form-group {
     display: flex;
@@ -494,7 +516,8 @@ footer {
 /* =========================================
    Responsive Styles
    ========================================= */
-@media (max-width: 768px) {
+   @media (max-width: 768px) {
+    /* Navigation Styles */
     .nav-links {
         position: fixed;
         right: 0;
@@ -503,9 +526,11 @@ footer {
         background-color: #004466;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 50%; /* Adjusted width for better spacing */
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        z-index: 1000; /* Above other content */
+        padding-top: 60px; /* Pushes menu items lower */
     }
 
     .nav-links li {
@@ -529,41 +554,312 @@ footer {
         padding: 2rem 1.5rem;
     }
 
-    .contact-content h1 {
-        font-size: 2rem;
-    }
 
-    .submit-button {
-        width: 100%;
-    }
 
-    /* Hero Section Adjustments */
+    /* ================================
+       Title Alignment and Styling
+       ================================ */
+    .services-content h1,
+    .testimonials-content h1,
+    .contact-content h1,
+    .about-content h2,
     .hero h1 {
-        font-size: 2.5rem;
+        color: #004466 !important; /* Consistent blue hue matching the navigation bar */
+        font-size: 2.5rem !important; /* Consistent font size */
+        margin-top: 2rem !important; /* Consistent top margin */
+        margin-bottom: 1rem !important; /* Consistent bottom margin */
     }
 
-    /* Profile Section Adjustments */
-    .profile {
-        flex-direction: column;
-        align-items: center;
+    /* Ensure Uniform Widths for Service Items on Narrow Screens */
+    .service-item {
+        flex: 1 1 100% !important; /* Make each service item take full width */
+        max-width: 400px !important; /* Ensure uniform max-width */
+        width: 100% !important; /* Fill the container's width */
     }
 
-    .profile img {
-        width: 200px;
-        height: 200px;
+    /* Adjust Horizontal Spacing Between Image and Service Items */
+    .service-list {
+        gap: 2.5rem !important; /* Increased gap for better spacing */
     }
 
     /* Service List Adjustments */
     .service-list,
     .portfolio-grid,
     .testimonial-list {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Profile Section Adjustments */
+    .profile {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .profile img {
+        width: 200px !important;
+        height: 200px !important;
     }
 
     /* Portfolio Grid Adjustments */
     .portfolio-grid {
-        flex-direction: row; /* Ensure horizontal alignment on larger screens */
+        flex-direction: row !important; /* Ensure horizontal alignment on larger screens */
+        align-items: center !important;
+    }
+
+    /* Ensure Consistent Spacing After Titles */
+    .services-content p,
+    .testimonials-content p,
+    .about-content p,
+    .contact-content p,
+    .hero p {
+        margin-top: 0.5rem !important; /* Consistent spacing after titles */
+        margin-bottom: 1.5rem !important; /* Consistent spacing before next element */
+    }
+}
+
+@media (max-width: 767px) {
+    /* Testimonials Content Adjustments */
+    .testimonials-content {
+        margin: 2rem auto !important;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr !important; /* Single column for very small screens */
+    }
+
+    .testimonials-image {
+        max-width: 300px !important; /* Adjust for smaller screens */
+    }
+
+    /* ================================
+       Title Alignment and Styling
+       ================================ */
+    .services-content h1,
+    .testimonials-content h1,
+    .contact-content h1,
+    .about-content h2,
+    .hero h1 {
+        color: #004466 !important; /* Consistent blue hue matching the navigation bar */
+        font-size: 2.5rem !important; /* Consistent font size */
+        margin-top: 2rem !important; /* Consistent top margin */
+        margin-bottom: 1rem !important; /* Consistent bottom margin */
+    }
+
+    /* Ensure Uniform Widths for Service Items on Very Small Screens */
+    .service-item {
+        flex: 1 1 100% !important; /* Make each service item take full width */
+        max-width: 400px !important; /* Ensure uniform max-width */
+        width: 100% !important; /* Fill the container's width */
+    }
+
+    /* Adjust Horizontal Spacing Between Image and Service Items */
+    .service-list {
+        gap: 2.5rem !important; /* Increased gap for better spacing */
+    }
+
+    /* Service List Adjustments */
+    .service-list,
+    .portfolio-grid,
+    .testimonial-list {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Profile Section Adjustments */
+    .profile {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .profile img {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    /* Portfolio Grid Adjustments */
+    .portfolio-grid {
+        flex-direction: row !important; /* Ensure horizontal alignment on larger screens */
+        align-items: center !important;
+    }
+
+    /* Ensure Consistent Spacing After Titles */
+    .services-content p,
+    .testimonials-content p,
+    .about-content p,
+    .contact-content p,
+    .hero p {
+        margin-top: 0.5rem !important; /* Consistent spacing after titles */
+        margin-bottom: 1.5rem !important; /* Consistent spacing before next element */
+    }
+}
+
+
+/* =========================================
+   Title Color Adjustments
+   ========================================= */
+
+    /* Ensure Titles on Services and About Pages are Always Blue */
+    .services-content h1,
+    .about-content .bio h2 {
+        color: #004466; /* Blue hue matching the main menu bar */
+    }
+
+/* =========================================
+   Global Styles
+   ========================================= */
+
+/* Ensure all elements include padding and borders in their total width and height */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   Testimonials Page Styles
+   ========================================= */
+.testimonials-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.testimonials-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #004466;
+}
+
+.image-testimonials-container {
+    display: flex;
+    align-items: center; /* Vertically centers items relative to each other */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 4rem; /* Increased gap from 2rem to 4rem for more spacing */
+    margin-bottom: 3rem;
+    flex-wrap: nowrap; /* Prevent wrapping on large screens */
+}
+
+.testimonials-image {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* Side Testimonials */
+.side-testimonial {
+    flex: 1 1 35%; /* Changed from 0 0 35% to 1 1 35% to allow growth */
+    max-width: 400px; /* Matches grid testimonials */
+    min-width: 250px; /* Ensures consistency with grid testimonials */
+    width: 100%; /* Fills the allocated space */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content within the testimonial */
+    height: 100%; /* Ensures testimonials stretch to match image height */
+    margin: 0 auto; /* Centers horizontally within allocated space */
+}
+
+.side-testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.side-testimonial p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.side-testimonial h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Additional Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content within the testimonial */
+    box-sizing: border-box; /* Includes padding and borders in width */
+    min-width: 250px; /* Consistent min-width */
+    max-width: 400px; /* Consistent max-width */
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.testimonial-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-item h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* =========================================
+   Responsive Styles
+   ========================================= */
+@media (max-width: 991px) {
+    .image-testimonials-container {
+        flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* Reset order to ensure image comes first */
+    .side-testimonial.left,
+    .side-testimonial.right {
+        order: 2; /* Ensure both testimonials come after the image */
+        flex: 1 1 100%; /* Allow testimonials to take full width */
+        max-width: 400px; /* Prevent them from stretching too wide */
+    }
+
+    .testimonials-image {
+        order: 1; /* Image comes first */
+        max-width: 300px; /* Adjust for smaller screens */
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .testimonials-content {
+        margin: 2rem auto;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+
+    .testimonials-image {
+        max-width: 300px; /* Adjust for smaller screens */
     }
 }
